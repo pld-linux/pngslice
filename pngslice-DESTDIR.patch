@@ -1,0 +1,26 @@
+diff -bur pngslice.org/Makefile.in pngslice/Makefile.in
+--- pngslice.org/Makefile.in	2008-10-19 11:11:00.883665888 +0200
++++ pngslice/Makefile.in	2008-10-19 11:11:10.793665479 +0200
+@@ -10,6 +10,7 @@
+ VERSION   = @VERSION@
+ RUBBISH   = *~
+ CONFFILES = config.cache config.log config.status configure Makefile
++DESTDIR =
+ 
+ # targets
+ 
+diff -bur pngslice.org/src/Makefile.in pngslice/src/Makefile.in
+--- pngslice.org/src/Makefile.in	2008-10-19 11:11:00.870957880 +0200
++++ pngslice/src/Makefile.in	2008-10-19 11:12:10.747617395 +0200
+@@ -53,8 +53,9 @@
+ check : test.html
+ 
+ install : $(NAME) $(NAME)
+-	$(INSTEXEC) $(NAME) $(bindir)/$(NAME) 
+-	$(INSTDATA) $(NAME).1  $(mandir)/man1/$(NAME).1 
++	$(INSTDIR) $(DESTDIR)$(bindir) $(DESTDIR)$(mandir)/man1
++	$(INSTEXEC) $(NAME) $(DESTDIR)$(bindir)/$(NAME) 
++	$(INSTDATA) $(NAME).1  $(DESTDIR)$(mandir)/man1/$(NAME).1 
+ 
+ bt : backtrace
+ 
