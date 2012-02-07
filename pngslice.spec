@@ -2,7 +2,7 @@ Summary:	create ragged images in HTML
 Summary(pl.UTF-8):	tworzenie podzielonych obrazków  HTML
 Name:		pngslice
 Version:	0.66
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications
 Source0:	http://sview01.wiredworkplace.net/pub/jjg/code/%{name}.tar.gz
